@@ -21,6 +21,8 @@ app.use( session({
 }));
 app.use( checkForSession );
 
+app.use( express.static( `${__dirname}/../public/build` ) );
+
 // Swag
 app.get( '/api/swag', swag_controller.read );
 
